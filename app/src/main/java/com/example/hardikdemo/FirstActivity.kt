@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.unittestingdemo1.R
 
 class FirstActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
