@@ -9,7 +9,6 @@ import org.junit.Test
 class HelperTest {
 
     lateinit var helper: Helper
-
     // If we went to check any thing before the check any test case
     // Then We'll use @Before annotation.
     // Function naming must be setUp for easily identify.
@@ -29,13 +28,10 @@ class HelperTest {
 
     @Test
     fun isPallindrome() {
-
         // ARRANGE
-        //val helper = Helper()
-
+        val helper = Helper()
         // ACT
         val result = helper.isPallindrome("hello")
-
         // ASSERT
         assertEquals(false, result)
     }
@@ -44,11 +40,10 @@ class HelperTest {
     // Here we are expecting value true. So, we've setup level is true.
     // It can be very easy to understand what we expecting from particular function
     // Always check test-coverage. It's must be greater the 80% success.
-
     @Test
     fun isPallindrome_insert_value_level_expected_true() {
         // ARRANGE
-        //val helper = Helper()
+        val helper = Helper()
         // ACT
         val result = helper.isPallindrome("level")
         // ASSERT

@@ -19,4 +19,11 @@ class Helper {
         }
         return result
     }
+
+    fun main(){
+        println(isPallindrome("hello")) // This is not palindrome so it will return false.
+        println(isPallindrome("level")) // This is palindrome so it will return true.
+        println(isPallindrome("a")) // This is palindrome so it will return true.
+        println(isPallindrome("")) // This is palindrome so it will return true.
+    }
 }
