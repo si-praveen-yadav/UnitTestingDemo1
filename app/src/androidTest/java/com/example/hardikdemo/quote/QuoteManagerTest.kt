@@ -31,4 +31,11 @@ class QuoteManagerTest {
 
         quoteManager.populateQuoteFromAssets(context, "quotes.json")
     }
+
+    @Test(expected = FileNotFoundException::class)
+    fun populateQuoteFromAssets_success_even_we_pass_blank_name() {
+        val quoteManager = QuoteManager()
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        quoteManager.populateQuoteFromAssets(context, "")
+    }
 }
