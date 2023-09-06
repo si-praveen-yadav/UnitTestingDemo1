@@ -20,6 +20,23 @@ class Helper {
         return result
     }
 
+    fun validatePassword(input : String) = when{
+        input.isBlank() -> {
+            "Please enter password"
+        }
+        input.length < 6 -> {
+            "Password length must be greater then 6"
+        }
+        input.length > 15 -> {
+            "Password length should be less then 15"
+        }
+        else -> {
+            "Valid"
+        }
+
+    }
+
+
     fun main(){
         println(isPallindrome("hello")) // This is not palindrome so it will return false.
         println(isPallindrome("level")) // This is palindrome so it will return true.

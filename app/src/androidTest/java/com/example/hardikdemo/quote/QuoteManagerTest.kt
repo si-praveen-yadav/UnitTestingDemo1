@@ -38,4 +38,29 @@ class QuoteManagerTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         quoteManager.populateQuoteFromAssets(context, "")
     }
+    @Test
+    fun testPopulateQuoteFromAssets_count_valid_json_value() {
+        val quoteManager = QuoteManager()
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        quoteManager.populateQuoteFromAssets(context, "quotes.json")
+        assertEquals(7, quoteManager.quoteList.size)
+    }
+
+
+    @Test
+    fun testPrevious_quote_expected_correctQuote(){
+        // Arrange
+        val quoteManager = QuoteManager()
+        quoteManager.populateQuote(arrayOf(
+            Quote("test", "1"),
+            Quote("test1", "2"),
+            Quote("test2", "3")
+        ))
+
+        // Act
+        val qutoe = quoteManager.getPreviousQuote()
+        // Assert
+
+        assertEquals("1", qutoe.author)
+    }
 }

@@ -70,4 +70,22 @@ class HelperTest {
         assertEquals(false, result)
     }
 
+    @Test
+    fun validatePassword_blankInput_expectedRequired_Field(){
+        val result = helper.validatePassword(" ")
+        assertEquals("Please enter password", result)
+    }
+
+    @Test
+    fun validatePassword_2Characters_expectedValidatingMSG(){
+        val result = helper.validatePassword("12")
+        assertEquals("Password length must be greater then 6", result)
+    }
+
+    @Test
+    fun validatePassword_15Characters_expectedValidatingMSG(){
+        val result = helper.validatePassword("1234567890123451")
+        assertEquals("Password length should be less then 15", result)
+    }
+
 }
